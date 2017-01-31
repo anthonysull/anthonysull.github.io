@@ -1,4 +1,7 @@
-
+--
+layout: post
+title: Project 1
+--
 # Project 1
 
 ## Step 1: Open the `sat_scores.csv` file. Investigate the data, and answer the questions below.
