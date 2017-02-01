@@ -122,11 +122,17 @@ Using matplotlib.pyplot to plot the scatter plots of each score category against
 
 Using Tableau to create a few choropleths of our data we can see that the coasts have much higher rates of participation than the middle of the country. Variations in local policies and college admission policies will probably show some correlation here, with the major academic corridors along the coasts. We can also see, with the exceptions of Connecticut and Ohio, that states with higher participation rates tend to have lower mean SAT scores.
 
-![Rates of Participation](../images/project_1_sat/rate.png)
+#### Rates of Participation per State
 
-![Verbal Scores](../images/project_1_sat/verbal.png)
+![Rates of Participation](../images/project_1_sat/rate1.png)
 
-![Math Scores](../images/project_1_sat/math.png)
+#### Mean Verbal Score per State
+
+![Verbal Scores](../images/project_1_sat/verbal1.png)
+
+#### Mean Math Score per State
+
+![Math Scores](../images/project_1_sat/math1.png)
 
 ----
 
