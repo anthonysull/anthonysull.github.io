@@ -7,26 +7,6 @@ For this project we will be using python with the matplotlib, numpy, and seaborn
 
 Taking a quick look at the csv we can see we have average verbal and math scores by state - here represented by its abbreviation - as well as the rate of participation in the SAT for each state and the District of Columbia for the year 2001. Additionally, there is a row giving the mean scores and rate for all states that will need to be removed.
 
-First we want to import our libraries and set our charts to plot inline.
-
-```python
-# Numeric and statistics packages:
-import numpy as np
-import scipy.stats as stats
-
-import csv
-
-# Pandas handles dataset loading and manipulation:
-import pandas as pd
-
-# import the plotting functions:
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-# Setup matplotlib to display in notebook:
-%matplotlib inline
-```
-
 ## Reading in the Data
 
 I’ve used both the python csv module and the pandas library to read in the data and demonstrate the differences between each.
