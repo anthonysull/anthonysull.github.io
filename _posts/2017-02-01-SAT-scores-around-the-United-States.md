@@ -34,10 +34,8 @@ I’ve used both the python csv module and the pandas library to read in the dat
 We can see that using pandas reads in a nicely organized dataframe with the headers recognized already. 
 
 ```python
-
 #Read in csv file with pandas
 scores_pd = pd.read_csv('/Users/anthonysullivan/Sites/GA-DSI/projects/project-1-sat-scores/assets/sat_scores.csv')
-
 ```
 
 When we read in with the csv module the data needs to be split into a list of lists
@@ -52,7 +50,6 @@ with open(sat_scores_path, 'r') as f:
     reader = csv.reader(f)
     for row in reader:
         rows_csv.append(row)
-
 ```
 
 On our list, we need to remove the header. We also need to remove the row 'All', which is a mean of all states, from both our list and our dataframe. 
@@ -151,6 +148,6 @@ Using Tableau to create a few choropleths of our data we can see that the coasts
 
  The gap in participation rates and the multimodal distribution of the test scores would suggest state policies and competition from the ACT is tainting the results of SAT scores across the country. SAT scores on their own would not be a good measure of student aptitude across the country. See <a href="http://www.nytimes.com/interactive/2013/08/04/education/edlife/where-the-sat-and-act-dominate.html">these</a> maps from the NYTimes. 
 
- <a href="https://git.generalassemb.ly/anthonysull/project-1-sat-scores/blob/master/project_1.ipynb">Link</a>to the jupyter notebook. 
+ <a href="https://git.generalassemb.ly/anthonysull/project-1-sat-scores/blob/master/project_1.ipynb">Link</a> to the jupyter notebook. 
 
 
