@@ -116,6 +116,8 @@ Here we can see the wide variance in rates of participation between states with 
 
 Using matplotlib.pyplot to plot the scatter plots of each score category against the rate of participation, we can see that states with much lower participation rates have a significantly higher mean score for both verbal and math subjects. This would suggest that the smaller population taking the SAT in these states possibly tends to be students that are more ambitious and more prepared. 
 
+----
+
 ### Choropleths
 
 Using Tableau to create a few choropleths of our data we can see that the coasts have much higher rates of participation than the middle of the country. Variations in local policies and college admission policies will probably show some correlation here, with the major academic corridors along the coasts. We can also see, with the exceptions of Connecticut and Ohio, that states with higher participation rates tend to have lower mean SAT scores.
@@ -126,7 +128,11 @@ Using Tableau to create a few choropleths of our data we can see that the coasts
 
 ![Math Scores](../images/project_1_sat/math.png)
 
- The gap in participation rates and the multimodal distribution of the test scores would suggest state policies and competition from the ACT is tainting the results of SAT scores across the country. SAT scores on their own would not be a good measure of student aptitude across the country. See <a href="http://www.nytimes.com/interactive/2013/08/04/education/edlife/where-the-sat-and-act-dominate.html">these</a> maps from the NYTimes. 
+----
+
+## Conclusion
+
+ The gap in participation rates and the multimodal distribution of the test scores would suggest state policies and competition from the ACT is tainting the results of SAT scores. SAT scores on their own would not be a good measure of student aptitude across the country. See <a href="http://www.nytimes.com/interactive/2013/08/04/education/edlife/where-the-sat-and-act-dominate.html">these</a> maps from the NYTimes. 
 
  <a href="https://git.generalassemb.ly/anthonysull/project-1-sat-scores/blob/master/project_1.ipynb">Link</a> to the jupyter notebook. 
 
