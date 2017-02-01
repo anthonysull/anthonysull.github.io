@@ -3,7 +3,25 @@ layout: post
 title: SAT scores around the United States
 --
 
-For this project we will be using python with the matplotlib, numpy, and seaborn modules, as well as Tableau to explore data for SAT scores around the United States. We will be looking for any correlations that exist between mean scores and the rate of participation.
+For this project we will be using python with the matplotlib, numpy, and seaborn modules, as well as Tableau to explore data for SAT scores around the United States. We will be looking for any correlations that exist between mean scores and the rate of participation. First we import our libraries and set our charts to plot inline.
+
+```python
+# Numeric and statistics packages:
+import numpy as np
+import scipy.stats as stats
+
+import csv
+
+# Pandas handles dataset loading and manipulation:
+import pandas as pd
+
+# import the plotting functions:
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Setup matplotlib to display in notebook:
+%matplotlib inline
+```
 
 Taking a quick look at the csv we can see we have average verbal and math scores by state - here represented by its abbreviation - as well as the rate of participation in the SAT for each state and the District of Columbia for the year 2001. Additionally, there is a row giving the mean scores and rate for all states that will need to be removed.
 
@@ -12,14 +30,46 @@ Taking a quick look at the csv we can see we have average verbal and math scores
 
 I’ve used both the python csv module and the pandas library to read in the data and demonstrate the differences between each.
 
-We can see that using pandas reads in a nicely organized dataframe with the headers recognized already. Further, by calling dtypes on the dataframe, we can see that pandas auto recognizes the type of each column.
+We can see that using pandas reads in a nicely organized dataframe with the headers recognized already. 
 
-When we read in with the csv module the data needs to be split into a list of lists, and then the header removed. Additionally, by printing the type of each column we can see the data has been read in as strings, so we will need to reassign the values for Rate, Verbal, and Math to integers. We can then create a dictionary of these values mapped to each state in order to call operations on it later.
+```python
 
+#Read in csv file with pandas
+scores_pd = pd.read_csv('/Users/anthonysullivan/Sites/GA-DSI/projects/project-1-sat-scores/assets/sat_scores.csv')
+
+#Open and read in csv file with base python
+f = open('/Users/anthonysullivan/Sites/GA-DSI/projects/project-1-sat-scores/assets/sat_scores.csv', 'r')
+data = f.read()
+
+```
+
+When we read in with the csv module the data needs to be split into a list of lists
+
+```python
+# Read in data using csv module and create list of lists
+sat_scores_path = '/Users/anthonysullivan/Sites/GA-DSI/projects/project-1-sat-scores/assets/sat_scores.csv'
+
+rows_csv = []
+
+with open(sat_scores_path, 'r') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        rows_csv.append(row)
+
+```
 
 ## Describing the Data
 
+By calling dtypes on the dataframe, we can see that pandas auto recognizes the type of each column.
+
 Using pandas to describe our dataframe we can see the max and min values for each column, the mean, and standard deviation.
+
+
+The header removed. Additionally, by printing the type of each column we can see the data has been read in as strings, so we will need to reassign the values for Rate, Verbal, and Math to integers. We can then create a dictionary of these values mapped to each state in order to call operations on it later.
+
+
+
+
 
 On our dictionary, we can use list comprehensions to get the max and min values of our data. We can then use a function or Numpy to get the standard deviation.
 
@@ -38,25 +88,7 @@ Using Tableau to create a few choropleths of our data we can see that the coasts
 
 Link to the jupyter notebook
 
-
-## Step 1: Open the `sat_scores.csv` file. Investigate the data, and answer the questions below.
-
-
-##### 1. What does the data describe?
-
-The data describes for each state: the rate that students take the SAT, as well as the average Verbal and Math score.
-
-##### 2. Does the data look complete? Are there any obvious issues with the observations?
-
-The data looks complete though the last row is an average of all states.
-
-##### 3. Create a data dictionary for the dataset.
-
-
-
 ## Step 2: Load the data.
-
-##### 4. Load the data into a list of lists
 
 
 ```python
@@ -79,17 +111,6 @@ import seaborn as sns
 #Read in csv file with pandas
 scores_pd = pd.read_csv('/Users/anthonysullivan/Sites/GA-DSI/projects/project-1-sat-scores/assets/sat_scores.csv')
 
-#Open and read in csv file with base python
-f = open('/Users/anthonysullivan/Sites/GA-DSI/projects/project-1-sat-scores/assets/sat_scores.csv', 'r')
-data = f.read()
-
-# Split data and create a list of lists
-rows = data.split()
-listed = []
-for row in rows:
-    values = row.split(',')
-    listed.append(values)
-
 # Read in data using csv module and create list of lists
 sat_scores_path = '/Users/anthonysullivan/Sites/GA-DSI/projects/project-1-sat-scores/assets/sat_scores.csv'
 
@@ -100,403 +121,6 @@ with open(sat_scores_path, 'r') as f:
     for row in reader:
         rows_csv.append(row)
 ```
-
-##### 5. Print the data
-
-
-```python
-# Print both versions of the data read in
-print rows_csv
-print '-'
-scores_pd
-```
-
-    [['State', 'Rate', 'Verbal', 'Math'], ['CT', '82', '509', '510'], ['NJ', '81', '499', '513'], ['MA', '79', '511', '515'], ['NY', '77', '495', '505'], ['NH', '72', '520', '516'], ['RI', '71', '501', '499'], ['PA', '71', '500', '499'], ['VT', '69', '511', '506'], ['ME', '69', '506', '500'], ['VA', '68', '510', '501'], ['DE', '67', '501', '499'], ['MD', '65', '508', '510'], ['NC', '65', '493', '499'], ['GA', '63', '491', '489'], ['IN', '60', '499', '501'], ['SC', '57', '486', '488'], ['DC', '56', '482', '474'], ['OR', '55', '526', '526'], ['FL', '54', '498', '499'], ['WA', '53', '527', '527'], ['TX', '53', '493', '499'], ['HI', '52', '485', '515'], ['AK', '51', '514', '510'], ['CA', '51', '498', '517'], ['AZ', '34', '523', '525'], ['NV', '33', '509', '515'], ['CO', '31', '539', '542'], ['OH', '26', '534', '439'], ['MT', '23', '539', '539'], ['WV', '18', '527', '512'], ['ID', '17', '543', '542'], ['TN', '13', '562', '553'], ['NM', '13', '551', '542'], ['IL', '12', '576', '589'], ['KY', '12', '550', '550'], ['WY', '11', '547', '545'], ['MI', '11', '561', '572'], ['MN', '9', '580', '589'], ['KS', '9', '577', '580'], ['AL', '9', '559', '554'], ['NE', '8', '562', '568'], ['OK', '8', '567', '561'], ['MO', '8', '577', '577'], ['LA', '7', '564', '562'], ['WI', '6', '584', '596'], ['AR', '6', '562', '550'], ['UT', '5', '575', '570'], ['IA', '5', '593', '603'], ['SD', '4', '577', '582'], ['ND', '4', '592', '599'], ['MS', '4', '566', '551'], ['All', '45', '506', '514']]
-    -
-
-
-
-
-
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>State</th>
-      <th>Rate</th>
-      <th>Verbal</th>
-      <th>Math</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>CT</td>
-      <td>82</td>
-      <td>509</td>
-      <td>510</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>NJ</td>
-      <td>81</td>
-      <td>499</td>
-      <td>513</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>MA</td>
-      <td>79</td>
-      <td>511</td>
-      <td>515</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>NY</td>
-      <td>77</td>
-      <td>495</td>
-      <td>505</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>NH</td>
-      <td>72</td>
-      <td>520</td>
-      <td>516</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>RI</td>
-      <td>71</td>
-      <td>501</td>
-      <td>499</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>PA</td>
-      <td>71</td>
-      <td>500</td>
-      <td>499</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>VT</td>
-      <td>69</td>
-      <td>511</td>
-      <td>506</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>ME</td>
-      <td>69</td>
-      <td>506</td>
-      <td>500</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>VA</td>
-      <td>68</td>
-      <td>510</td>
-      <td>501</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>DE</td>
-      <td>67</td>
-      <td>501</td>
-      <td>499</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>MD</td>
-      <td>65</td>
-      <td>508</td>
-      <td>510</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>NC</td>
-      <td>65</td>
-      <td>493</td>
-      <td>499</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>GA</td>
-      <td>63</td>
-      <td>491</td>
-      <td>489</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>IN</td>
-      <td>60</td>
-      <td>499</td>
-      <td>501</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>SC</td>
-      <td>57</td>
-      <td>486</td>
-      <td>488</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>DC</td>
-      <td>56</td>
-      <td>482</td>
-      <td>474</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>OR</td>
-      <td>55</td>
-      <td>526</td>
-      <td>526</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>FL</td>
-      <td>54</td>
-      <td>498</td>
-      <td>499</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>WA</td>
-      <td>53</td>
-      <td>527</td>
-      <td>527</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>TX</td>
-      <td>53</td>
-      <td>493</td>
-      <td>499</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>HI</td>
-      <td>52</td>
-      <td>485</td>
-      <td>515</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>AK</td>
-      <td>51</td>
-      <td>514</td>
-      <td>510</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>CA</td>
-      <td>51</td>
-      <td>498</td>
-      <td>517</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>AZ</td>
-      <td>34</td>
-      <td>523</td>
-      <td>525</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>NV</td>
-      <td>33</td>
-      <td>509</td>
-      <td>515</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>CO</td>
-      <td>31</td>
-      <td>539</td>
-      <td>542</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>OH</td>
-      <td>26</td>
-      <td>534</td>
-      <td>439</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>MT</td>
-      <td>23</td>
-      <td>539</td>
-      <td>539</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>WV</td>
-      <td>18</td>
-      <td>527</td>
-      <td>512</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>ID</td>
-      <td>17</td>
-      <td>543</td>
-      <td>542</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>TN</td>
-      <td>13</td>
-      <td>562</td>
-      <td>553</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>NM</td>
-      <td>13</td>
-      <td>551</td>
-      <td>542</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>IL</td>
-      <td>12</td>
-      <td>576</td>
-      <td>589</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>KY</td>
-      <td>12</td>
-      <td>550</td>
-      <td>550</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>WY</td>
-      <td>11</td>
-      <td>547</td>
-      <td>545</td>
-    </tr>
-    <tr>
-      <th>36</th>
-      <td>MI</td>
-      <td>11</td>
-      <td>561</td>
-      <td>572</td>
-    </tr>
-    <tr>
-      <th>37</th>
-      <td>MN</td>
-      <td>9</td>
-      <td>580</td>
-      <td>589</td>
-    </tr>
-    <tr>
-      <th>38</th>
-      <td>KS</td>
-      <td>9</td>
-      <td>577</td>
-      <td>580</td>
-    </tr>
-    <tr>
-      <th>39</th>
-      <td>AL</td>
-      <td>9</td>
-      <td>559</td>
-      <td>554</td>
-    </tr>
-    <tr>
-      <th>40</th>
-      <td>NE</td>
-      <td>8</td>
-      <td>562</td>
-      <td>568</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>OK</td>
-      <td>8</td>
-      <td>567</td>
-      <td>561</td>
-    </tr>
-    <tr>
-      <th>42</th>
-      <td>MO</td>
-      <td>8</td>
-      <td>577</td>
-      <td>577</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>LA</td>
-      <td>7</td>
-      <td>564</td>
-      <td>562</td>
-    </tr>
-    <tr>
-      <th>44</th>
-      <td>WI</td>
-      <td>6</td>
-      <td>584</td>
-      <td>596</td>
-    </tr>
-    <tr>
-      <th>45</th>
-      <td>AR</td>
-      <td>6</td>
-      <td>562</td>
-      <td>550</td>
-    </tr>
-    <tr>
-      <th>46</th>
-      <td>UT</td>
-      <td>5</td>
-      <td>575</td>
-      <td>570</td>
-    </tr>
-    <tr>
-      <th>47</th>
-      <td>IA</td>
-      <td>5</td>
-      <td>593</td>
-      <td>603</td>
-    </tr>
-    <tr>
-      <th>48</th>
-      <td>SD</td>
-      <td>4</td>
-      <td>577</td>
-      <td>582</td>
-    </tr>
-    <tr>
-      <th>49</th>
-      <td>ND</td>
-      <td>4</td>
-      <td>592</td>
-      <td>599</td>
-    </tr>
-    <tr>
-      <th>50</th>
-      <td>MS</td>
-      <td>4</td>
-      <td>566</td>
-      <td>551</td>
-    </tr>
-    <tr>
-      <th>51</th>
-      <td>All</td>
-      <td>45</td>
-      <td>506</td>
-      <td>514</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 
 
 
