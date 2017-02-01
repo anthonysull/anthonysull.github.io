@@ -133,9 +133,13 @@ plt.show()
 
 Here we can see the wide variance in rates of participation between states with a gap in the middle. This leads me to question the policies towards testing in each state and whether those policies have a strong correlation with participation rates.
 
+###Scatter Plots
+
 ![Verbal Scatterplot](../images/project_1_sat/output_41_0.png)
 
 Using matplotlib.pyplot to plot the scatter plots of each score category against the rate of participation, we can see that states with much lower participation rates have a significantly higher mean score for both verbal and math subjects. This would suggest that the smaller population taking the SAT in these states possibly tends to be students that are more ambitious and more prepared. 
+
+###Choropleths
 
 Using Tableau to create a few choropleths of our data we can see that the coasts have much higher rates of participation than the middle of the country. Variations in local policies and college admission policies will probably show some correlation here, with the major academic corridors along the coasts. We can also see, with the exceptions of Connecticut and Ohio, that states with higher participation rates tend to have lower mean SAT scores.
 
@@ -145,10 +149,8 @@ Using Tableau to create a few choropleths of our data we can see that the coasts
 
 ![Math Scores](../images/project_1_sat/math.png)
 
- The gap in participation rates and the multimodal distribution of the test scores would suggest state policies and competition from the ACT is tainting the results of SAT scores across the country. SAT scores on their own would not be a good measure of student aptitude across the country. See <a href="http://www.nytimes.com/interactive/2013/08/04/education/edlife/where-the-sat-and-act-dominate.html">these</a> maps from the NYTimes. Link to ACT/SAT maps.
+ The gap in participation rates and the multimodal distribution of the test scores would suggest state policies and competition from the ACT is tainting the results of SAT scores across the country. SAT scores on their own would not be a good measure of student aptitude across the country. See <a href="http://www.nytimes.com/interactive/2013/08/04/education/edlife/where-the-sat-and-act-dominate.html">these</a> maps from the NYTimes. 
 
- <a href="http://www.nytimes.com/interactive/2013/08/04/education/edlife/where-the-sat-and-act-dominate.html">these</a>
-
-Link to the jupyter notebook: 
+ <a href="https://git.generalassemb.ly/anthonysull/project-1-sat-scores/blob/master/project_1.ipynb">Link</a>to the jupyter notebook. 
 
 
