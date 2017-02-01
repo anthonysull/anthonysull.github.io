@@ -147,50 +147,6 @@ Using Tableau to create a few choropleths of our data we can see that the coasts
 
  The gap in participation rates and the multimodal distribution of the test scores would suggest state policies and competition from the ACT is tainting the results of SAT scores across the country. SAT scores on their own would not be a good measure of student aptitude across the country. See these maps from the NYTimes. Link to ACT/SAT maps.
 
-Link to the jupyter notebook
-
-
-
-##### 15. Plot the Math distribution
-
-
-```python
-# Set the plot size
-fig, ax = plt.subplots(figsize=(8,6))
-
-# Plot the histogram for Math with matplotlib.pyplot
-plt.hist(Math, bins=10, alpha=0.5)
-plt.xlabel('Math Scores')
-plt.ylabel('Frequency')
-plt.title('Average Math Scores per State', fontsize=18, y=1.03)
-plt.axis([400, 650, 0, 14])
-
-# Plot the histogram for math with pandas overlaid
-scores_pd['Math'].hist(bins=10, alpha=0.5)
-plt.grid(False)
-plt.show()
-```
-
-
-![png](output_33_0.png)
-
-Scatter Plots
-
-```python
-# Set the plot size
-fig, ax = plt.subplots(figsize=(8,6))
-
-# Create a scatter plot of rate vs verbal using matplotlib.pyplot
-plt.scatter(Rate,Verbal, s=100, c='red', alpha=.5)
-plt.xlabel('Rate of Participation', fontsize=12)
-plt.ylabel('Verbal Scores')
-plt.title('Average Verbal Scores vs Rate', fontsize=18, y=1.03)
-plt.axis([0, 100, 400, 650])
-plt.grid(False)
-plt.show()
-```
-
-
-![png](output_41_0.png)
+Link to the jupyter notebook: 
 
 
