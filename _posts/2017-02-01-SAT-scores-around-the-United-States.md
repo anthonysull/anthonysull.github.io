@@ -1,7 +1,7 @@
---
+---
 layout: post
 title: SAT scores around the United States
---
+---
 
 For this project we will be using python with the matplotlib, numpy, and seaborn modules, as well as Tableau to explore data for SAT scores around the United States. We will be looking for any correlations that exist between mean scores and the rate of participation. 
 
