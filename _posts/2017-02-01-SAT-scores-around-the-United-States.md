@@ -145,7 +145,9 @@ Using Tableau to create a few choropleths of our data we can see that the coasts
 
 ![Math Scores](../images/project_1_sat/math.png)
 
- The gap in participation rates and the multimodal distribution of the test scores would suggest state policies and competition from the ACT is tainting the results of SAT scores across the country. SAT scores on their own would not be a good measure of student aptitude across the country. See these maps from the NYTimes. Link to ACT/SAT maps.
+ The gap in participation rates and the multimodal distribution of the test scores would suggest state policies and competition from the ACT is tainting the results of SAT scores across the country. SAT scores on their own would not be a good measure of student aptitude across the country. See <a href="http://www.nytimes.com/interactive/2013/08/04/education/edlife/where-the-sat-and-act-dominate.html">these</a> maps from the NYTimes. Link to ACT/SAT maps.
+
+ <a href="http://www.nytimes.com/interactive/2013/08/04/education/edlife/where-the-sat-and-act-dominate.html">these</a>
 
 Link to the jupyter notebook: 
 
