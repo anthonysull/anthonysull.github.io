@@ -3,6 +3,42 @@ layout: post
 title: SAT scores around the United States
 --
 
+For this project we will be using python with the matplotlib, numpy, and seaborn modules, as well as Tableau to explore data for SAT scores around the United States. We will be looking for any correlations that exist between mean scores and the rate of participation.
+
+Taking a quick look at the csv we can see we have average verbal and math scores by state - here represented by its abbreviation - as well as the rate of participation in the SAT for each state and the District of Columbia for the year 2001. Additionally, there is a row giving the mean scores and rate for all states that will need to be removed.
+
+
+## Reading in the Data
+
+I’ve used both the python csv module and the pandas library to read in the data and demonstrate the differences between each.
+
+We can see that using pandas reads in a nicely organized dataframe with the headers recognized already. Further, by calling dtypes on the dataframe, we can see that pandas auto recognizes the type of each column.
+
+When we read in with the csv module the data needs to be split into a list of lists, and then the header removed. Additionally, by printing the type of each column we can see the data has been read in as strings, so we will need to reassign the values for Rate, Verbal, and Math to integers. We can then create a dictionary of these values mapped to each state in order to call operations on it later.
+
+
+## Describing the Data
+
+Using pandas to describe our dataframe we can see the max and min values for each column, the mean, and standard deviation.
+
+On our dictionary, we can use list comprehensions to get the max and min values of our data. We can then use a function or Numpy to get the standard deviation.
+
+
+## Exploratory Data Analysis
+
+I’ve used matplotlib.pyplot to plot the histograms of each column from our dictionary.
+
+Here we can see the wide variance in rates of participation between states with a gap in the middle. This leads me to question the policies towards testing in each state and whether those policies have a strong correlation with participation rates.
+
+Now using matplotlib.pyplot to plot the scatter plots of each score category against the rate of participation we can see that states with much lower participation rates have a significantly higher mean score for both verbal and math subjects. This would suggest that the smaller population taking the SAT in these states possibly tends to be students that are more ambitious and more prepared. 
+
+Using Tableau to create a few choropleths of our data we can see that the coasts have much higher rates of participation than the middle of the country. Variations in local policies and college admission policies will probably show some correlation here, with the major academic corridors along the coasts. We can also see, with the exceptions of Connecticut and Ohio, that states with higher participation rates tend to have lower mean SAT scores.
+
+ The gap in participation rates and the multimodal distribution of the test scores would suggest state policies and competition from the ACT is tainting the results of SAT scores across the country. SAT scores on their own would not be a good measure of student aptitude across the country. See these maps from the NYTimes. Link to ACT/SAT maps.
+
+Link to the jupyter notebook
+
+
 ## Step 1: Open the `sat_scores.csv` file. Investigate the data, and answer the questions below.
 
 
