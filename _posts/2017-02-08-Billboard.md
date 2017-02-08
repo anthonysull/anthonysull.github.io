@@ -16,16 +16,13 @@ Also interesting to note is the way in which Billboard charts by genre, which is
 
 “What separates the charts is which stations and stores are used; each musical genre has a core audience or retail group. Each genre's department at Billboard is headed up by a chart manager, who makes these determinations.”
 
-In this excercise we will assume that the Billboard's metrics for measuring tracks popularity are a good good measure of track performance. 
+In this excercise we will assume that the Billboard's metrics for measuring tracks popularity are a good measure of track performance. 
 
 We are also assuming the labelling of our data is correct. Genre is a contentious issue, but since Billboard is our client in this case, we will trust their judgement here. (The data is mislabelled, but for the purposes of this project we will assume it is correct.)
 
-Because Billboard determines genre rankings by tracking the expected audience rather than basing the genre on song characteristics, many songs crossover into multiple genre charts. For instance, a song may chart in the R&B chart as well as the Pop chart if it is popular in the metrics for both audiences. We will use this to relabel tracks that fall into genres representing less than 1% of our data.
+Because Billboard determines genre rankings by tracking the expected audience rather than basing the genre on song characteristics, many songs crossover into multiple genre charts. For instance, a song may chart in the R&B chart as well as the Pop chart if it is popular in the metrics for both audiences. We will use this information to relabel tracks that fall into genres representing less than 1% of our data.
 
-Another problem of tracking genre by audience that it assumes that a particular audience’s taste is static. Though an audience may favor one genre over another, many will enjoy a great track no matter the genre to some degree (country being a bit more difficult perhaps).
-For this reason, as well as the mislabelled genres of many songs I will avoid using genre for any analysis.
-
-Some of our risks: 
+### Some of our risks: 
 
 - The data set is not very large and only contains data for one year. It would be difficult to maintain any correlations found here over further years. 
 
@@ -33,28 +30,41 @@ Some of our risks:
 
 ### Exploring the data / Munging
 
-The data set need quite a bit of reformatting. Null values were set using np.nan. Empty week columns were dropped, as was the column for year as all tracks are from 2000. Categorical series were checked for duplicates. The genre categories were relabelled to correct some duplicates and to group tracks from lesser represented genres into broader genres. The logic for this is that many songs - especially from underrepresented genres - can be considered crossover songs, charting in multiple genre categories. The track length - 'time' - was reformatted from 'mm.ss.ms AM' into seconds. Additionally, to be able to calculate the number of weeks it took a song to peak, the date for entry into the chart and the date for peaking were both reformatted from a string in the format 'Month Day, Year' into a Datetime format. The top ranking and number of weeks a track was in the charts were also pulled out of the data, and a song score was computed by summing the inverse rank over all weeks a song charted.
+We reformatted quite a bit of the data. Null values were set using np.nan. Empty week columns were dropped, as was the column for year as all tracks are from 2000. 
 
-Some interesting quirks arose while exploring the data. Most racks in the Hot 100 fell of the charts after week 20. All of these tracks were ranked below the top 50 when they exited. Additionally, tracks that remained in the charts beyond 20 weeks all exited the chart in the top 50. This leads me to speculate that
-There are some quirks in either the music industry or in the methods Billboatd uses to rank songs. For instance, this could represent the prevalence of top 40 radio airplay and Billboards us of airplay in their ranking methods. There could be a 20 week airplay rotation for songs that aren't in the top 40, with only those in the top 40 remaining in the charts beyond week 20. This could represent an over reliance on airplay in determining track popularity. 
+Categorical series were checked for duplicates. The genre categories were relabelled to correct some duplicates and to group tracks from lesser represented genres into broader genres. The logic for this is that many songs - especially from underrepresented genres - can be considered crossover songs, charting in multiple genre categories. 
+
+The track length - 'time' - was reformatted from 'mm.ss.ms AM' into seconds. Additionally, to be able to calculate the number of weeks it took a song to peak, the date for entry into the chart and the date for peaking were both reformatted from a string in the format 'Month Day, Year' into a Datetime format. 
+
+The top ranking and number of weeks a track was in the charts were also pulled out of the data, and a song score was computed by summing the inverse rank over all weeks a song charted.
+
+### Some Initial Observations
+
+Some interesting quirks arose while exploring the data. Most racks in the Hot 100 fell of the charts after week 20. All of these tracks were ranked below the top 50 when they exited. Additionally, tracks that remained in the charts beyond 20 weeks all exited the chart in the top 50. 
+
+This 'death zone' beyond 20 weeks and under the top 40, leads me to speculate that there are some quirks in either the music industry or in the methods Billboatd uses to rank songs. For instance, this could represent the prevalence of top 40 radio airplay and Billboards us of airplay in their ranking methods. 
+
+There could be a 20 week airplay rotation for songs, with only those in the top 40 remaining in the charts beyond this point. This could represent an over reliance on airplay in determining the rankings in the Hot 100. 
 
 ![Track Rankings per Week](../images/Billboard100/rankperweek.png)
 
-If we take a look at the genres we can see that rock songs are the most numerous in the charts in 2000. Rock’n’roll tracks appear to have outperformed other genres based on song score.
+If we take a look at the genres we can see that rock songs are the most numerous in the charts in 2000, but Rock’n’roll tracks appear to perform much better.
 
 ![Track Rankings per Week](../images/Billboard100/genrescore.png)
 
 Rock’n’roll songs demonstrate a median song score of over 1600. That is almost 1200 points better than the median song score for all tracks. 
 
-This leads us to our first problem statement. 
+### Evaluations
+
+This leads us to our first problem statement: 
 
 - Do certain genres perform better than others
 
 To determine if the median score difference for Rock’n’roll songs is significant we will use the shuffle method. Using this method we find the probability that a median score difference of 1185 is zero, therefore showing that Rock'n'roll tracks did indeed outperform all other genres.
 
+A second hypothesis tested is whether the debut ranking of a song has an affect on its overall performance. The top 10% of tracks over the year debuted at a median ranking of 76.5, about 5 points higher than for all songs. Using the shuffle method again, we find the probability of this occuring is less than 3%, so there is a correlation between debut ranking and overall performance.
 
-Interestingly the top performing song of all of 2000 - Faith Hill’s Breathe - never reached the number spot. It made it to number 2 but had long legs, staying in the charts for over 50 weeks. Timing in relation to other hit songs appears to have a strong influence on peak position, but not on overall performance. A short lived hit can keep a popular song with legs from reaching the top spot. 
-
+Interestingly, the top performing song of all of 2000 - Faith Hill’s Breathe - never reached the number spot. It made it to number 2 but had long legs, staying in the charts for over 50 weeks. Timing in relation to other hit songs appears to have a strong influence on peak position, but not on overall performance. A short lived hit can keep a popular song with legs from reaching the top spot, but not from being the years top track. 
 
 <a href="https://git.generalassemb.ly/anthonysull/project-2-billboard/blob/master/Billboard100.ipynb">Link</a> to the jupyter notebook. 
 
