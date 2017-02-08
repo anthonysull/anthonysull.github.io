@@ -56,4 +56,5 @@ To determine if the median score difference for Rock’n’roll songs is signifi
 Interestingly the top performing song of all of 2000 - Faith Hill’s Breathe - never reached the number spot. It made it to number 2 but had long legs, staying in the charts for over 50 weeks. Timing in relation to other hit songs appears to have a strong influence on peak position, but not on overall performance. A short lived hit can keep a popular song with legs from reaching the top spot. 
 
 
-<a href="https://git.generalassemb.ly/anthonysull/project-2-billboard/blob/master/Billboard100.ipynb”>Link</a> to the jupyter notebook. 
+<a href="https://git.generalassemb.ly/anthonysull/project-2-billboard/blob/master/Billboard100.ipynb">Link</a> to the jupyter notebook. 
+
