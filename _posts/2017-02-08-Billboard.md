@@ -54,7 +54,7 @@ If we take a look at the genres we can see that rock songs are the most numerous
 
 ![Track Rankings per Week](../images/Billboard100/genrescore.png)
 
-Rock’n’roll songs demonstrate a median song score of over 1600. That is almost 1200 points better than the median song score for all tracks. 
+<a href="https://youtu.be/M3T_xeoGES8?t=26">Rock'n'roll</a> songs demonstrate a median song score of over 1600. That is almost 1200 points better than the median song score for all tracks. 
 
 ### Evaluations
 
