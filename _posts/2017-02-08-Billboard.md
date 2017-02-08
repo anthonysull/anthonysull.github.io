@@ -50,13 +50,10 @@ This leads us to our first problem statement.
 
 - Do certain genres perform better than others
 
-To determine if the median score difference for Rock’n’roll songs is significant we will use the shuffle 
+To determine if the median score difference for Rock’n’roll songs is significant we will use the shuffle method. Using this method we find the probability that a median score difference of 1185 is zero, therefore showing that Rock'n'roll tracks did indeed outperform all other genres.
 
 
 Interestingly the top performing song of all of 2000 - Faith Hill’s Breathe - never reached the number spot. It made it to number 2 but had long legs, staying in the charts for over 50 weeks. Timing in relation to other hit songs appears to have a strong influence on peak position, but not on overall performance. A short lived hit can keep a popular song with legs from reaching the top spot. 
 
 
-![Track Rankings per Week](../images/Billboard100/rankperweek.png)
-
-
-Link to my <a href="https://git.generalassemb.ly/anthonysull/project-2-billboard/blob/master/Billboard100.ipynb”>notebook</a>
+<a href="https://git.generalassemb.ly/anthonysull/project-2-billboard/blob/master/Billboard100.ipynb”>Link</a> to the jupyter notebook. 
