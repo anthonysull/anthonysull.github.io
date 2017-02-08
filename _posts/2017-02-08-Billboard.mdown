@@ -1,0 +1,16 @@
+---
+layout: post
+title: Measuring the Billboard Hot 100 in the 2000's
+---
+
+What makes for a hot song? Using Billboard chart data to analyze what made a hit soar to the top of the charts, and how long they stayed there.
+
+Hotness
+
+Soar
+
+Soaring Songs, Popularity on the Billboard 100.
+
+Hot factors on the BIllboard 100
+
+## Reading in the Data
