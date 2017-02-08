@@ -8,7 +8,7 @@ Our dataset represents the top performing tracks for the year 2000 based on Bill
 
 ### Lets take a look at our dataset
 
-Let's look at how Billboard compiles its Hot 100 list since many of our assumptions will be due to Billboard's own <a href="https://en.wikipedia.org/wiki/Billboard_Hot_100#Year-end_charts">metrics</a>.
+Lets look at how Billboard compiles its Hot 100 list since many of our assumptions will be due to Billboard's own <a href="https://en.wikipedia.org/wiki/Billboard_Hot_100#Year-end_charts">metrics</a>.
 
 "Chart rankings are based on sales (physical and digital), radio play and online streaming."
 
@@ -30,8 +30,6 @@ Some of our risks:
 - The data set is not very large and only contains data for one year. It would be difficult to maintain any correlations found here over further years. 
 
 - Because we are not privy to Billboard's metrics and our data is one step  removed, it does not contain the level fineness used in ranking songs in the Hot 100. Therefore a song reaching the number one spot for three weeks in May may not have done as well as a song reaching the top spot for three weeks in June based on the underlying metrics, but we will have to treat them as equal here.
-
-### Reading in the Data
 
 ### Exploring the data / Munging
 
