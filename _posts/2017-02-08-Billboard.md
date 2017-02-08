@@ -54,7 +54,7 @@ If we take a look at the genres we can see that rock songs are the most numerous
 
 ![Track Rankings per Week](../images/Billboard100/genrescore.png)
 
-<a href="https://youtu.be/M3T_xeoGES8?t=26">Rock'n'roll</a> songs demonstrate a median song score of over 1600. That is almost 1200 points better than the median song score for all tracks. 
+ Rock'n'roll songs demonstrate a median song score of over 1600. That is almost 1200 points better than the median song score for all tracks. 
 
 ### Evaluations
 
@@ -62,7 +62,7 @@ This leads us to our first problem statement:
 
 - Do certain genres perform better than others
 
-To determine if the median score difference for Rock’n’roll songs is significant we will use the shuffle method. Using this method we find the probability that a median score difference of 1185 is zero, therefore showing that Rock'n'roll tracks did indeed outperform all other genres.
+To determine if the median score difference for Rock’n’roll songs is significant we will use the shuffle method. Using this method we find the probability that a median score difference of 1185 is zero, therefore showing that <a href="https://youtu.be/M3T_xeoGES8?t=26">Rock'n'roll</a> is still very much alive.
 
 A second hypothesis tested is whether the debut ranking of a song has an affect on its overall performance. The top 10% of tracks over the year debuted at a median ranking of 76.5, about 5 points higher than for all songs. Using the shuffle method again, we find the probability of this occuring is less than 3%, so there is a correlation between debut ranking and overall performance.
 
