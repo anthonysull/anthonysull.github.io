@@ -18,7 +18,7 @@ Also interesting to note is the way in which Billboard charts by genre, which is
 
 “What separates the charts is which stations and stores are used; each musical genre has a core audience or retail group. Each genre's department at Billboard is headed up by a chart manager, who makes these determinations.”
 
-In this excercise we will assume that the Billboard's metrics for measuring tracks popularity are a good measure of track performance. 
+In this excercise we will assume that the Billboard's metrics for measuring tracks are a good measure of performance. 
 
 We are also assuming the labelling of our data is correct. Genre is a contentious issue, but since Billboard is our client in this case, we will trust their judgement here. (The data is mislabelled, but for the purposes of this project we will assume it is correct.)
 
