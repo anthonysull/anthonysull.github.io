@@ -6,7 +6,7 @@ title: Measuring the Billboard Hot 100 of 2000
 ### Introduction
 
 This week we are looking at data from the Billboard Hot 100 of 2000.
-Our dataset represents the top performing tracks for the year 2000 based on Billboard's metrics. It includes all of the tracks that peaked during the year 2000. Using Billboard chart data to analyze we can look for any indicators for what made a song do well in the charts and if certain genres performed well.
+Our dataset represents the top performing tracks for the year 2000 based on Billboard's metrics. It includes all of the tracks that peaked during the year 2000. Using Billboard's chart data we can look for any indicators for what made a song do well.
 
 ### Assumptions
 
