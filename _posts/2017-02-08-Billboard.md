@@ -64,9 +64,9 @@ This leads us to our first problem statement:
 
 To determine if the median score difference for Rock’n’roll songs is significant we will use the shuffle method. Using this method we find the probability that a median score difference of 1185 is zero, therefore showing that <a href="https://youtu.be/M3T_xeoGES8?t=26">Rock'n'roll</a> is still very much alive.
 
-A second hypothesis tested is whether the debut ranking of a song has an affect on its overall performance. The top 10% of tracks over the year debuted at a median ranking of 76.5, about 5 points higher than for all songs. Using the shuffle method again, we find the probability of this occuring is less than 3%, so there is a correlation between debut ranking and overall performance.
+Also tested was whether the debut ranking of a song has an affect on its overall performance. The top 10% of tracks over the year debuted at a median ranking of 76.5, about 5 points higher than for all songs. Using the shuffle method again, we find the probability of this occuring is less than 3%, so there is a correlation between debut ranking and overall performance.
 
-Interestingly, the top performing song of all of 2000 - Faith Hill’s Breathe - never reached the number spot. It only made it to number 2, but it had very long legs, staying in the charts for over 50 weeks. Timing in relation to other hit songs appears to have a strong influence on peak position, but not on overall performance. A short lived hit can keep a popular song with legs from reaching the top spot, but not from being the years top track. 
+Interestingly, the top performing song of all of 2000 - Faith Hill’s Breathe - never reached the number spot. It only made it to number 2, but it had very long legs, staying in the charts for over 50 weeks. Timing in relation to other hit songs appears to have a strong influence on peak position, but not on overall performance. It would seem a short lived hit can keep a popular song with legs from reaching the top spot, but not from being the years top track. 
 
 <a href="https://git.generalassemb.ly/anthonysull/project-2-billboard/blob/master/Billboard100.ipynb">Link</a> to the jupyter notebook. 
 
