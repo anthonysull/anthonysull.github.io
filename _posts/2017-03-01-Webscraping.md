@@ -5,34 +5,22 @@ title: Webscraping Job Postings from Glassdoor
 
 ### Introduction
 
-This week we are goin to scrape job postings from Glassdoor in order to get a sense of the salaries for data science jobs across the country.
+This week we are going to scrape job postings from Glassdoor in order to get a sense of the salaries for data science jobs across the country.
 
-### Assumptions
+### Goals
+Scrape job postings  from Glassdoor using beautiful soup. 
+Build a Logistic Regression model to predict whether a job will have a high salary. 
 
-Lets look at how Billboard compiles its Hot 100 list since many of our assumptions will be due to Billboard's own <a href="https://en.wikipedia.org/wiki/Billboard_Hot_100#Year-end_charts">metrics</a>.
+### Risks and Assumptions
 
-
-### Some of our risks: 
-
-- The data set 
+Glassdoor is only one of many job search sites, but we are assuming that most advertised positions will be posted here. We are also assuming that Glassdoor's estimated salary range, included with most postings, gives us a good idea of the expected salary for each position. 
 
 ### Scraping
 
-
 ### Exploring the data / Munging
 
-We reformatted quite a bit of the data. . 
+We reformatted quite a bit of the data. 
 
 
-
-### Some Initial Observations
-
-Some interesting quirks arose while exploring the data. Most racks in the Hot 100 fell of the charts after week 20. All of these tracks were ranked below the top 50 when they exited. Additionally, tracks that remained in the charts beyond 20 weeks all exited the chart in the top 50. 
-
-![Track Rankings per Week](../images/Billboard100/genrescore.png)
-
-
-### Evaluations
-
-<a href="https://git.generalassemb.ly/anthonysull/project-2-billboard/blob/master/Billboard100.ipynb">Link</a> to the jupyter notebook. 
+<a href="https://git.generalassemb.ly/anthonysull/project-4-webscraping/blob/master/Project%204%20-%20GlassDoor%202.ipynb">Link</a> to the jupyter notebook. 
 
