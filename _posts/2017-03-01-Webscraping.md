@@ -5,10 +5,10 @@ title: Webscraping Job Postings from Glassdoor
 
 ### Introduction
 
-This week we are going to scrape job postings from Glassdoor in order to get a sense of the salaries for data science jobs across the country.
+This week we are scraping data science job postings from Glassdoor for cities across the country and analyzing them to find for factors that are strongly correlated to salary. 
 
 ### Goals
-- Scrape job postings from Glassdoor using beautiful soup. 
+- Scrape job postings from Glassdoor using the requests module and parsing them with beautifulsoup. 
 
 - Build a Logistic Regression model to predict whether a job will have a high salary. 
 
